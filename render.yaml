@@ -27,11 +27,10 @@ services:
     dockerCommand: "./scripts/run"
     autoDeploy: true
 
-databases:
-  - name: judge0-db
-    plan: free
-
-services:
   - type: redis
     name: judge0-redis
+    plan: free
+
+databases:
+  - name: judge0-db
     plan: free
