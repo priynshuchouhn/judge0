@@ -30,6 +30,9 @@ services:
   - type: redis
     name: judge0-redis
     plan: free
+    ipAllowList:
+      - source: judge0-api
+        description: Allow API to connect to Redis
 
 databases:
   - name: judge0-db
