@@ -31,8 +31,8 @@ services:
     name: judge0-redis
     plan: free
     ipAllowList:
-      - source: judge0-api
-        description: Allow API to connect to Redis
+      - source: 0.0.0.0/0
+        description: Allow internal Render network
 
 databases:
   - name: judge0-db
