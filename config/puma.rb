@@ -1,9 +1,17 @@
-threads_count = Integer(ENV['RAILS_MAX_THREADS'])
-process_count = Integer(ENV['RAILS_SERVER_PROCESSES'])
+# config/puma.rb
+
+# Provide defaults for missing environment variables
+threads_count = Integer(ENV.fetch('RAILS_MAX_THREADS', 5))
+process_count = Integer(ENV.fetch('RAILS_SERVER_PROCESSES', 2))
+
 threads threads_count, threads_count
 workers process_count
 
-port ENV['PORT']
-environment ENV['RAILS_ENV']
+# Default port to 2358 if not provided
+port ENV.fetch('PORT', 2358)
 
+# Default environment to production
+environment ENV.fetch('RAILS_ENV', 'production')
+
+# Allow `rails restart` command to work
 plugin :tmp_restart
