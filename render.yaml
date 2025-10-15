@@ -24,7 +24,6 @@ services:
         generateValue: true
       - key: DISABLE_TELEMETRY
         value: "true"
-    dockerCommand: "./scripts/run"
     autoDeploy: true
 
   - type: redis
